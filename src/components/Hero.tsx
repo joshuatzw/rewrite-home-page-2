@@ -18,7 +18,7 @@ export default function Hero() {
                 Start writing free
               </a>
               <span className="hint">
-                or try it below, press <span className="kbd">⌘⏎</span>
+                or try it below, press <span className="kbd">Ctrl Shift '.'</span>
               </span>
             </div>
           </div>

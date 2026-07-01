@@ -5,7 +5,7 @@ const STEPS = [
   { n: '04', t: 'Paste, prompt, and wait', gone: true },
   { n: '05', t: 'Copy the answer back', gone: true },
   { n: '06', t: 'Paste and re-format it', gone: true },
-  { n: '→', t: 'Press ⌘⏎. Keep writing.', keep: true },
+  { n: '→', t: 'Press the hotkeys. Keep writing.', keep: true },
 ]
 
 export default function TheLoop() {

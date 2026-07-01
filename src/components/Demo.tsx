@@ -116,7 +116,7 @@ export default function Demo() {
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+      if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === '.') {
         e.preventDefault()
         doRun()
       }
@@ -197,7 +197,7 @@ export default function Demo() {
           ) : null}
         </div>
         <button className="run" onClick={doRun}>
-          Rewrite <span className="k">⌘⏎</span>
+          Rewrite <span className="k">⌘⇧.</span>
         </button>
       </div>
     </div>

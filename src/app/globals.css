@@ -130,7 +130,7 @@ nav.links a:hover{color:var(--ink)}
 
 /* ---- skills ---- */
 .skills{padding:40px 0 96px}
-.skills-inner{background:var(--paper-2);border:1px solid var(--line);border-radius:6px;padding:60px 56px}
+.skills-inner{}
 .skills-head{display:flex;align-items:baseline;justify-content:space-between;gap:30px;margin-bottom:48px;flex-wrap:wrap}
 .skills-inner h2{font-size:clamp(30px,4vw,46px);font-weight:400;letter-spacing:-.02em;max-width:18ch}
 .skills-inner h2 em{font-style:italic}
@@ -173,5 +173,4 @@ footer.foot{border-top:1px solid var(--line);padding:54px 0 70px}
   .cap:nth-child(odd){border-right:none}
   .hero{padding:56px 0 24px}
   .loop-inner{padding:40px 28px}
-  .skills-inner{padding:40px 28px}
 }
