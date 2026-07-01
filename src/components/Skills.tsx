@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const SKILLS = [
   {
     no: '01',
@@ -22,6 +24,17 @@ export default function Skills() {
             </h2>
             <p>Build the writing assistant that actually sounds like you.</p>
           </div>
+
+          <div className="skills-hero-img">
+            <Image
+              src="/assets/Skills-Menu.png"
+              alt="reWrite Skills menu"
+              width={1298}
+              height={912}
+              style={{ width: '100%', height: 'auto' }}
+            />
+          </div>
+
           <div className="cap-grid">
             {SKILLS.map((skill) => (
               <div key={skill.no} className="cap">
@@ -30,6 +43,16 @@ export default function Skills() {
                 <p>{skill.body}</p>
               </div>
             ))}
+          </div>
+
+          <div className="skills-sub-img">
+            <Image
+              src="/assets/New-Skill.png"
+              alt="Create a new skill"
+              width={519}
+              height={497}
+              style={{ width: '100%', height: 'auto' }}
+            />
           </div>
         </div>
       </div>

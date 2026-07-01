@@ -135,6 +135,9 @@ nav.links a:hover{color:var(--ink)}
 .skills-inner h2{font-size:clamp(30px,4vw,46px);font-weight:400;letter-spacing:-.02em;max-width:18ch}
 .skills-inner h2 em{font-style:italic}
 .skills-head p{font-family:var(--sans);font-size:15px;color:var(--ink-soft);max-width:34ch;line-height:1.6}
+.skills-hero-img{border-radius:8px;overflow:hidden;box-shadow:0 24px 60px -20px rgba(22,18,14,.18);margin-bottom:0;border:1px solid var(--line)}
+.skills-sub-img{margin-top:48px;display:flex;justify-content:center}
+.skills-sub-img img{max-width:480px;border-radius:12px;box-shadow:0 16px 48px -16px rgba(22,18,14,.22);border:1px solid var(--line)}
 
 /* ---- loop ---- */
 .loop{padding:40px 0 96px}
