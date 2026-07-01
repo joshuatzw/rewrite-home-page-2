@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 
 const NOTES_BEFORE =
-  `Q3 planning sync — 47 min. Went back and forth on priorities. Marketing wants the pricing-page refresh, but the data says most churn happens in the very first session: people never finish setup. Agreed onboarding wins. Eng thinks the new first-run flow is doable by mid-August if we cut the import step for v1. Pricing experiment results land early September, so we're holding any pricing changes until then. Sam to own the experiment dashboard. Next sync Thursday.`
+  `Q3 planning sync, 47 min. Went back and forth on priorities. Marketing wants the pricing-page refresh, but the data says most churn happens in the very first session: people never finish setup. Agreed onboarding wins. Eng thinks the new first-run flow is doable by mid-August if we cut the import step for v1. Pricing experiment results land early September, so we're holding any pricing changes until then. Sam to own the experiment dashboard. Next sync Thursday.`
 
 const SAMPLES = {
   rewrite: {
@@ -48,10 +48,10 @@ interface WordToken {
 type OutputLine = WordToken[] | null
 
 const DONE_MSGS: Record<Mode, string> = {
-  rewrite: 'Done — clear, confident, on-tone.',
-  proofread: 'Done — every fix applied.',
-  summarize: 'Done — the gist, in two lines.',
-  bullets: 'Done — ready to skim.',
+  rewrite: 'Done. Clear, confident, on-tone.',
+  proofread: 'Done. Every fix applied.',
+  summarize: 'Done. The gist, in two lines.',
+  bullets: 'Done. Ready to skim.',
 }
 
 function buildOutput(mode: Mode): OutputLine[] {
@@ -151,9 +151,6 @@ export default function Demo() {
         <div
           ref={sourceRef}
           className="source"
-          contentEditable
-          suppressContentEditableWarning
-          spellCheck={false}
         />
         <div className="rule">
           <span>reWrite</span>
@@ -197,9 +194,7 @@ export default function Demo() {
             </span>
           ) : status === 'done' ? (
             <span>{doneMsg}</span>
-          ) : (
-            <span>Press ⌘⏎ to rewrite</span>
-          )}
+          ) : null}
         </div>
         <button className="run" onClick={doRun}>
           Rewrite <span className="k">⌘⏎</span>

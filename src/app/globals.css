@@ -131,9 +131,10 @@ nav.links a:hover{color:var(--ink)}
 /* ---- skills ---- */
 .skills{padding:40px 0 96px}
 .skills-inner{background:var(--paper-2);border:1px solid var(--line);border-radius:6px;padding:60px 56px}
-.skills-placeholder{margin-top:40px;border:2px dashed var(--line);border-radius:4px;
-  min-height:240px;display:flex;align-items:center;justify-content:center;
-  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.skills-head{display:flex;align-items:baseline;justify-content:space-between;gap:30px;margin-bottom:48px;flex-wrap:wrap}
+.skills-inner h2{font-size:clamp(30px,4vw,46px);font-weight:400;letter-spacing:-.02em;max-width:18ch}
+.skills-inner h2 em{font-style:italic}
+.skills-head p{font-family:var(--sans);font-size:15px;color:var(--ink-soft);max-width:34ch;line-height:1.6}
 
 /* ---- loop ---- */
 .loop{padding:40px 0 96px}

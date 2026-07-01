@@ -9,7 +9,7 @@ export default function Hero() {
         <div className="hero-grid">
           <div>
             <p className="hero-lead">
-              reWrite rewrites, proofreads and distills whatever you&apos;re typing — right where
+              reWrite rewrites, proofreads and distills whatever you&apos;re typing, right where
               you type it. <b>No pasting into a chatbot. No tab-switching.</b> Just press the key
               and keep going.
             </p>
@@ -18,7 +18,7 @@ export default function Hero() {
                 Start writing free
               </a>
               <span className="hint">
-                or try it below — press <span className="kbd">⌘⏎</span>
+                or try it below, press <span className="kbd">⌘⏎</span>
               </span>
             </div>
           </div>

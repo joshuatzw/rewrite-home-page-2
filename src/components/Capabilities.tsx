@@ -7,7 +7,7 @@ const CAPS = [
   {
     no: '02 / Proofread',
     title: <>Catch <em>everything</em></>,
-    body: 'Spelling, grammar, doubled words, stray punctuation — fixed quietly before anyone else sees the draft.',
+    body: 'Spelling, grammar, doubled words, stray punctuation. Fixed quietly before anyone else sees the draft.',
   },
   {
     no: '03 / Summarize',

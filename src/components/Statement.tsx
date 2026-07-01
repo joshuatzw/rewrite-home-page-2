@@ -5,7 +5,7 @@ export default function Statement() {
         <p>
           You already know what you want to say. reWrite just makes sure it <em>lands.</em>
         </p>
-        <div className="by">The reWrite manifesto — no. 01</div>
+        <div className="by">The reWrite manifesto, no. 01</div>
       </div>
     </section>
   )

@@ -26,7 +26,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="foot-base">© 2026 reWrite — Press once. Read perfect.</div>
+        <div className="foot-base">© 2026 reWrite. Press once. Read perfect.</div>
       </div>
     </footer>
   )
