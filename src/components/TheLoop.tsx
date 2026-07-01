@@ -18,7 +18,7 @@ export default function TheLoop() {
               Delete the <em>copy-paste loop.</em>
             </h2>
             <p className="sub">
-              The old way takes seven steps and three apps. reWrite is one — and you never leave
+              The old way takes seven steps and three apps. reWrite is one; and you never leave
               the cursor you were already in.
             </p>
           </div>

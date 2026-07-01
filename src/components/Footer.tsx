@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="name">
               re<i>Write</i>
             </div>
-            <p className="tag">Confident writing, one keystroke away. Works wherever you type.</p>
+            <p className="tag">Confident writing, one hotkey away. Works wherever you type.</p>
           </div>
           <div className="foot-links">
             <div className="foot-col">
