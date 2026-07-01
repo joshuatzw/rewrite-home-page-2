@@ -63,9 +63,10 @@ nav.links a:hover{color:var(--ink)}
 .mobile-menu a{font-family:var(--sans);font-size:16px;color:var(--ink-soft);
   padding:14px 0;border-bottom:1px solid var(--line)}
 .mobile-menu-cta{display:block;text-align:center;margin-top:16px;border-bottom:none !important}
-.btn-ghost{font-family:var(--sans); color:white; font-size:13.5px;border:1px solid var(--ink);border-radius:999px;
-  padding:9px 18px;background:var(--ink);color:var(--paper);transition:.18s}
-.btn-ghost:hover{background:var(--ink-soft);border-color:var(--ink-soft);color:var(--paper)}
+.btn-ghost{font-family:var(--sans);font-size:13.5px;border:1px solid var(--ink);border-radius:999px;
+  padding:9px 18px;background:var(--ink);color:white !important;transition:.18s}
+.btn-ghost:visited{color:white !important}
+.btn-ghost:hover{background:var(--ink-soft);border-color:var(--ink-soft);color:white !important}
 
 /* ---- hero ---- */
 .hero{padding:88px 0 40px}
