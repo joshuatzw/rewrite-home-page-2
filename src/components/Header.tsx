@@ -31,7 +31,7 @@ export default function Header() {
           </button>
 
           <div className="brand">
-            <Image src="/assets/reWrite-logo.png" alt="reWrite" width={26} height={26} />
+            <Image src="/assets/rewrite_logo_black.png" alt="reWrite" width={26} height={26} />
             <span className="name">
               <b>re</b>
               <i>Write</i>
@@ -54,9 +54,6 @@ export default function Header() {
           <a href="#demo" onClick={() => setOpen(false)}>Demo</a>
           <a href="#caps" onClick={() => setOpen(false)}>What it does</a>
           <a href="#loop" onClick={() => setOpen(false)}>The loop</a>
-          <a href="#" className="btn-solid mobile-menu-cta" onClick={() => setOpen(false)}>
-            Get reWrite
-          </a>
         </div>
       )}
     </>
