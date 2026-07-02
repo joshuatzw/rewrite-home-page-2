@@ -5,6 +5,7 @@ import Statement from '@/components/Statement'
 import Capabilities from '@/components/Capabilities'
 import Skills from '@/components/Skills'
 import TheLoop from '@/components/TheLoop'
+import GetReWrite from '@/components/GetReWrite'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <Capabilities />
         <Skills />
         <TheLoop />
+        <GetReWrite />
         <Footer />
       </main>
     </>

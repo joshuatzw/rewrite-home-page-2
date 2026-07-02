@@ -169,6 +169,21 @@ nav.links a:hover{color:var(--ink)}
 .lstep.keep .t{color:var(--paper);font-weight:600}
 .lstep.keep .n{color:var(--paper)}
 
+/* ---- get reWrite ---- */
+.get{padding:40px 0 96px}
+.get-inner{background:var(--card);border:1px solid var(--line);border-radius:6px;
+  padding:60px 56px;text-align:center;box-shadow:0 24px 60px -34px rgba(22,18,14,.4)}
+.get .kicker{margin-bottom:20px}
+.get h2{font-size:clamp(28px,3.6vw,42px);font-weight:400;letter-spacing:-.02em;line-height:1.1;
+  max-width:22ch;margin:0 auto}
+.get h2 em{font-style:italic}
+.get-cta{display:flex;justify-content:center;gap:16px;margin-top:40px;flex-wrap:wrap}
+.btn-download{font-family:var(--sans);display:flex;flex-direction:column;align-items:flex-start;gap:2px;
+  border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:14px 24px;min-width:190px;
+  text-align:left;cursor:not-allowed;opacity:.85}
+.btn-download .plat{font-size:16px;font-weight:600;color:var(--ink)}
+.btn-download .soon{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint)}
+
 /* ---- footer ---- */
 footer.foot{border-top:1px solid var(--line);padding:54px 0 70px}
 .foot-grid{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap}
@@ -198,6 +213,8 @@ footer.foot{border-top:1px solid var(--line);padding:54px 0 70px}
   .cap:nth-child(odd){border-right:none}
   .hero{padding:56px 0 24px}
   .loop-inner{padding:40px 28px}
+  .get-inner{padding:40px 28px}
+  .btn-download{min-width:0;flex:1}
   /* header: hamburger + centred brand */
   .top .wrap{display:grid;grid-template-columns:44px 1fr 44px;justify-content:initial}
   .brand{justify-content:center}

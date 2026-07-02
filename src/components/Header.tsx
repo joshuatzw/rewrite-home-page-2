@@ -42,7 +42,7 @@ export default function Header() {
             <a href="#demo">Demo</a>
             <a href="#caps">What it does</a>
             <a href="#loop">The loop</a>
-            <a href="#" className="btn-ghost">
+            <a href="#get" className="btn-ghost">
               Get reWrite
             </a>
           </nav>
@@ -54,6 +54,7 @@ export default function Header() {
           <a href="#demo" onClick={() => setOpen(false)}>Demo</a>
           <a href="#caps" onClick={() => setOpen(false)}>What it does</a>
           <a href="#loop" onClick={() => setOpen(false)}>The loop</a>
+          <a href="#get" className="btn-ghost mobile-menu-cta" onClick={() => setOpen(false)}>Get reWrite</a>
         </div>
       )}
     </>
