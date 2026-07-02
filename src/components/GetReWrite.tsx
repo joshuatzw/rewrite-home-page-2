@@ -5,7 +5,8 @@ export default function GetReWrite() {
         <div className="get-inner">
           <div className="kicker">Get reWrite</div>
           <h2>
-            Ready to try it out? <em>Download and let&apos;s get you started.</em>
+            Ready to try it out? <br></br>
+            <em>Let&apos;s get you started.</em>
           </h2>
           <div className="get-cta">
             <button className="btn-download" disabled>
