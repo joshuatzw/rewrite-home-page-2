@@ -18,7 +18,7 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'reWrite — Write it once. Send it with confidence.',
+  title: 'Write it once. Send it with confidence.',
   description:
     'reWrite rewrites, proofreads and distills whatever you\'re typing — right where you type it. No pasting into a chatbot. No tab-switching.',
 }

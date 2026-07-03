@@ -9,7 +9,7 @@ const SAMPLES = {
   rewrite: {
     label: 'Rewrite',
     note: 'Casual draft → polished, on-tone email',
-    before: `hey — wanted to check in on the deck from last week. did you get a chance to look? kinda need it by EOD if possible. lmk! thx`,
+    before: `hey maya I wanted to check in on the deck from last week. did you get a chance to look? kinda need it by EOD if possible. lmk! thx`,
     after: `Hi Maya,\n\nFollowing up on the deck I shared last week — were you able to take a look? I'd love to get your notes by end of day if that works on your side.\n\nThanks so much,\n\nJordan`,
   },
   proofread: {
@@ -28,7 +28,7 @@ const SAMPLES = {
     label: 'Bullet points',
     note: 'Dense notes → a scannable list',
     before: NOTES_BEFORE,
-    after: `• Onboarding is the Q3 priority — most churn is first-session\n• Simplified first-run flow ships mid-August (import cut for v1)\n• Pricing changes on hold until the September experiment readout\n• Sam owns the experiment dashboard`,
+    after: `• Onboarding is the Q3 priority — most churn is first-session\n\n• Simplified first-run flow ships mid-August (import cut for v1)\n\n• Pricing changes on hold until the September experiment readout\n\n• Sam owns the experiment dashboard`,
   },
 } as const
 
