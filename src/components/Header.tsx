@@ -31,7 +31,7 @@ export default function Header() {
           </button>
 
           <div className="brand">
-            <Image src="/assets/rewrite_logo_black.png" alt="reWrite" width={26} height={26} />
+            <Image src="/assets/logo_transparent_new.png" alt="reWrite" width={26} height={26} />
             <span className="name">
               <b>re</b>
               <i>Write</i>

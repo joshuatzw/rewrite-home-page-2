@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 interface Skill {
   id: string
@@ -141,7 +142,7 @@ export default function SkillsApp() {
       <div className="sk-app">
         <aside className="sk-side">
           <div className="sk-logo">
-            r<span className="sk-logo-bar">|</span><em>w</em>
+            <Image src="/assets/logo_transparent_new.png" alt="re:Write" width={34} height={34} />
           </div>
           <nav className="sk-nav">
             <span className="sk-nav-item"><Icon name="home" />Home</span>

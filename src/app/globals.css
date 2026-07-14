@@ -174,9 +174,8 @@ nav.links a:hover{color:var(--ink)}
 /* sidebar */
 .sk-side{background:var(--sk-side);border-right:1px solid var(--sk-line);
   padding:26px 18px 18px;display:flex;flex-direction:column}
-.sk-logo{font-family:var(--serif);font-size:34px;line-height:1;color:var(--sk-ink);margin:6px 6px 34px}
-.sk-logo .sk-logo-bar{color:var(--sk-faint);margin:0 1px;font-weight:300}
-.sk-logo em{font-style:italic}
+.sk-logo{line-height:1;margin:6px 6px 34px}
+.sk-logo img{display:block;height:34px;width:auto}
 .sk-nav{display:flex;flex-direction:column;gap:4px}
 .sk-nav-item{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:9px;
   font-family:var(--sans);font-size:15px;color:var(--sk-soft)}
@@ -410,7 +409,8 @@ footer.foot{border-top:1px solid var(--line);padding:54px 0 70px}
   .sk-app{grid-template-columns:1fr;min-height:0}
   .sk-side{flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px 14px;
     border-right:none;border-bottom:1px solid var(--sk-line);padding:14px 16px}
-  .sk-logo{margin:0 8px 0 0;font-size:26px}
+  .sk-logo{margin:0 8px 0 0}
+  .sk-logo img{height:26px}
   .sk-nav{flex-direction:row;flex-wrap:wrap;gap:4px;flex:1}
   .sk-nav-item{padding:8px 11px;font-size:13px}
   .sk-nav-item span{display:none}

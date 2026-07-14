@@ -13,7 +13,7 @@ export default function ContactPage() {
       <header className="top legal-top">
         <div className="wrap">
           <Link className="brand" href="/" aria-label="reWrite home">
-            <Image src="/assets/rewrite_logo_black.png" alt="" width={26} height={26} />
+            <Image src="/assets/logo_transparent_new.png" alt="" width={26} height={26} />
             <span className="name">
               <b>re</b>
               <i>Write</i>
