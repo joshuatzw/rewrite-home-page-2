@@ -109,7 +109,7 @@ function renderMarkdown(markdown: string) {
 
 export default async function PrivacyPage() {
   const markdown = await readFile(
-    path.join(process.cwd(), '..', 'uploads', 'rewrite-privacy-policy.md'),
+    path.join(process.cwd(), 'content', 'rewrite-privacy-policy.md'),
     'utf8',
   )
 
