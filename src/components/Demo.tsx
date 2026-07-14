@@ -6,29 +6,29 @@ const NOTES_BEFORE =
   `Q3 planning sync, 47 min. Went back and forth on priorities. Marketing wants the pricing-page refresh, but the data says most churn happens in the very first session: people never finish setup. Agreed onboarding wins. Eng thinks the new first-run flow is doable by mid-August if we cut the import step for v1. Pricing experiment results land early September, so we're holding any pricing changes until then. Sam to own the experiment dashboard. Next sync Thursday.`
 
 const SAMPLES = {
-  rewrite: {
-    label: 'Rewrite',
-    note: 'Casual draft → polished, on-tone email',
-    before: `hey maya I wanted to check in on the deck from last week. did you get a chance to look? kinda need it by EOD if possible. lmk! thx`,
-    after: `Hi Maya,\n\nFollowing up on the deck I shared last week — were you able to take a look? I'd love to get your notes by end of day if that works on your side.\n\nThanks so much,\n\nJordan`,
-  },
   proofread: {
     label: 'Proofread',
-    note: 'Catches spelling, grammar & punctuation',
+    note: 'Fixes every error, your voice untouched',
     before: `Their going to send the the report tommorow. Its been a long proccess but we definately made alot of progress this quater.`,
     after: `They're going to send the report tomorrow. It's been a long process, but we definitely made a lot of progress this quarter.`,
   },
-  summarize: {
-    label: 'Summarize',
-    note: 'A wall of notes → a two-line readout',
-    before: NOTES_BEFORE,
-    after: `Q3 will focus on first-session onboarding — the biggest source of churn. A simplified first-run flow ships in mid-August, and all pricing changes are on hold until the experiment readout in early September.`,
+  polish: {
+    label: 'Polish',
+    note: 'Rough draft → ready to send to anyone',
+    before: `hey maya I wanted to check in on the deck from last week. did you get a chance to look? kinda need it by EOD if possible. lmk! thx`,
+    after: `Hi Maya,\n\nFollowing up on the deck I shared last week. Did you get a chance to look it over? I'd love to have your notes by end of day if that works on your side.\n\nThanks so much,\n\nJordan`,
   },
-  bullets: {
-    label: 'Bullet points',
-    note: 'Dense notes → a scannable list',
+  summarise: {
+    label: 'Summarise',
+    note: 'A wall of notes → just the essentials',
     before: NOTES_BEFORE,
-    after: `• Onboarding is the Q3 priority — most churn is first-session\n\n• Simplified first-run flow ships mid-August (import cut for v1)\n\n• Pricing changes on hold until the September experiment readout\n\n• Sam owns the experiment dashboard`,
+    after: `Q3 will focus on first-session onboarding, the biggest source of churn. A simplified first-run flow ships in mid-August, and all pricing changes are on hold until the experiment readout in early September.`,
+  },
+  enhance: {
+    label: 'Enhance',
+    note: 'Thin and flat → substantial and convincing',
+    before: `We should invest more in onboarding. It would help with churn. I think it's worth doing.`,
+    after: `I'd like to make the case for investing more in onboarding. Right now, it's where we lose the most ground: users who struggle early rarely come back, and that early friction compounds into churn we never recover. Strengthening the first-run experience is one of the highest-leverage moves available to us, and I believe it's well worth prioritising this quarter.`,
   },
 } as const
 
@@ -48,10 +48,10 @@ interface WordToken {
 type OutputLine = WordToken[] | null
 
 const DONE_MSGS: Record<Mode, string> = {
-  rewrite: 'Done. Clear, confident, on-tone.',
   proofread: 'Done. Every fix applied.',
-  summarize: 'Done. The gist, in two lines.',
-  bullets: 'Done. Ready to skim.',
+  polish: 'Done. Clear, confident, ready to send.',
+  summarise: 'Done. The gist, in two lines.',
+  enhance: 'Done. Fuller, sharper, more convincing.',
 }
 
 function buildOutput(mode: Mode): OutputLine[] {
@@ -69,13 +69,13 @@ function buildOutput(mode: Mode): OutputLine[] {
 }
 
 export default function Demo() {
-  const [mode, setMode] = useState<Mode>('rewrite')
+  const [mode, setMode] = useState<Mode>('proofread')
   const [status, setStatus] = useState<'ready' | 'thinking' | 'done'>('ready')
   const [doneMsg, setDoneMsg] = useState('')
   const [outputLines, setOutputLines] = useState<OutputLine[]>([])
   const [revealed, setRevealed] = useState(false)
 
-  const modeRef = useRef<Mode>('rewrite')
+  const modeRef = useRef<Mode>('proofread')
   const runSeqRef = useRef(0)
   const thinkTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const sourceRef = useRef<HTMLDivElement>(null)

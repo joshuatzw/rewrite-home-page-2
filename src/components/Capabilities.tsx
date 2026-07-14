@@ -1,23 +1,23 @@
 const CAPS = [
   {
-    no: '01 / Rewrite',
-    title: <>Say it <em>better</em></>,
-    body: 'Turn a rushed draft into a clear, on-tone message. Warm it up, tighten it, or make it sound like you on a good day.',
-  },
-  {
-    no: '02 / Proofread',
+    no: '01 / Proofread',
     title: <>Catch <em>everything</em></>,
-    body: 'Spelling, grammar, doubled words, stray punctuation. Fixed quietly before anyone else sees the draft.',
+    body: 'Spelling, grammar, doubled words, stray punctuation. Fixed quietly, with your tone and wording left exactly as you wrote them.',
   },
   {
-    no: '03 / Summarize',
+    no: '02 / Polish',
+    title: <>Ready to <em>send</em></>,
+    body: 'Turn a rushed draft into something you can put in front of a colleague, client, or manager. Clearer, tighter, and professional without losing your meaning.',
+  },
+  {
+    no: '03 / Summarise',
     title: <>Find the <em>signal</em></>,
-    body: 'Drop in a wall of meeting notes and get the two lines that actually matter back in seconds.',
+    body: 'Drop in a wall of meeting notes and get back the few lines that actually matter, decisions, deadlines, and asks intact.',
   },
   {
-    no: '04 / Bullets',
-    title: <>Make it <em>scannable</em></>,
-    body: 'Reshape long, dense text into a clean list people will actually read. Perfect for recaps and handoffs.',
+    no: '04 / Enhance',
+    title: <>Say <em>more</em></>,
+    body: 'Take a thin, underdeveloped draft and give it depth. Weak points get sharper and the argument reads as complete, without inventing facts you never gave it.',
   },
 ]
 

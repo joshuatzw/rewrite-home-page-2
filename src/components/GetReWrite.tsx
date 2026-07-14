@@ -9,14 +9,26 @@ export default function GetReWrite() {
             <em>Let&apos;s get you started.</em>
           </h2>
           <div className="get-cta">
-            <button className="btn-download" disabled>
+            <a
+              className="btn-download"
+              href="https://github.com/joshuatzw/reWrite/releases/download/v1.0.9/reWrite_1.0.9_x64-setup.exe"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download reWrite 1.0.9 for Windows"
+            >
               <span className="plat">Windows</span>
-              <span className="soon">Coming soon</span>
-            </button>
-            <button className="btn-download" disabled>
-              <span className="plat">Mac</span>
-              <span className="soon">Coming soon</span>
-            </button>
+              <span className="soon">Download for Windows</span>
+            </a>
+            <a
+              className="btn-download"
+              href="https://github.com/joshuatzw/reWrite/releases/download/v1.0.9/reWrite_1.0.9_universal.dmg"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download reWrite 1.0.9 for macOS"
+            >
+              <span className="plat">macOS</span>
+              <span className="soon">Download for macOS</span>
+            </a>
           </div>
         </div>
       </div>
