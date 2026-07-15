@@ -322,6 +322,24 @@ footer.foot{border-top:1px solid var(--line);padding:54px 0 70px}
 .checkout-message{font-family:var(--serif);font-size:clamp(26px,4vw,40px);line-height:1.12;font-weight:400;letter-spacing:-.02em;text-wrap:balance}
 .checkout-message em{font-style:italic;font-weight:400}
 .checkout-status{margin-top:28px}
+.checkout-status em{font-style:italic}
+
+/* ---- auth handoff (sign-in return) ---- */
+.auth-badge{width:60px;height:60px;margin:0 auto 30px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center}
+.auth-badge svg{width:28px;height:28px}
+.auth-badge--ok{background:color-mix(in srgb,#5f9a5f 16%,var(--paper))}
+.auth-badge--ok svg{stroke:#3f7a45}
+.auth-badge--err{background:color-mix(in srgb,#b4483f 14%,var(--paper))}
+.auth-badge--err svg{stroke:#b4483f}
+.auth-spinner{width:34px;height:34px;margin:0 auto 30px;border-radius:50%;
+  border:2.5px solid var(--line);border-top-color:var(--ink);
+  animation:authSpin .8s linear infinite}
+@keyframes authSpin{to{transform:rotate(360deg)}}
+.auth-actions{margin-top:34px}
+.auth-hint{font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  color:var(--ink-faint);margin-top:18px}
+@media(prefers-reduced-motion:reduce){.auth-spinner{animation:none}}
 
 /* ---- contact ---- */
 .legal-top .wrap{display:flex}
