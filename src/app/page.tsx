@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import Demo from '@/components/Demo'
+import HowItWorks from '@/components/HowItWorks'
 import Statement from '@/components/Statement'
 import Capabilities from '@/components/Capabilities'
 import Skills from '@/components/Skills'
@@ -15,7 +15,7 @@ export default function Home() {
       <main>
         <Hero />
         <section id="demo" className="wrap" style={{ marginTop: '8px' }}>
-          <Demo />
+          <HowItWorks />
         </section>
         <Statement />
         <Capabilities />
