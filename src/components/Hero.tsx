@@ -14,7 +14,7 @@ export default function Hero() {
               and keep going.
             </p>
             <div className="hero-cta">
-              <a href="#" className="btn-solid">
+              <a href="#get" className="btn-solid">
                 Start writing free
               </a>
               <span className="hint">
