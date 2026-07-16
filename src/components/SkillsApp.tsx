@@ -14,9 +14,9 @@ interface Skill {
 
 const SEED: Skill[] = [
   { id: 'proofread', name: 'Proofread', desc: 'Fix spelling and grammar while preserving your tone and voice.', kind: 'built-in', on: true },
-  { id: 'formal-email', name: 'Formal Email', desc: 'Rewrite as a polished, professional business email.', kind: 'built-in', on: true },
+  { id: 'polish', name: 'Polish', desc: 'Turn a rushed draft into something clear, tight, and ready to send.', kind: 'built-in', on: true },
   { id: 'summarise', name: 'Summarise', desc: 'Condense the text into concise bullet points.', kind: 'built-in', on: false },
-  { id: 'shorten', name: 'Shorten', desc: 'Shorten the text while preserving its full meaning.', kind: 'built-in', on: true },
+  { id: 'enhance', name: 'Enhance', desc: 'Give a thin draft depth without inventing facts you never gave it.', kind: 'built-in', on: true },
   { id: 'beef', name: 'Beef It Up', desc: 'Take this text and write me a mail. You need to beef up my email with more information. For complex portions, please break it', kind: 'custom', base: 'Formal Email', on: true },
   { id: 'jp', name: 'Translate to Japanese', desc: 'Please help me to rewrite the following text in Japanese. The setting of the Japanese language should be formal business. After', kind: 'custom', on: true },
   { id: 'ecom', name: 'E-Commerce Speak', desc: '#I want you to take this text and rewrite it in a way that is suitable for eCommerce/marketing use. #The text should be catchy,', kind: 'custom', on: true },
