@@ -217,14 +217,22 @@ export default function HowItWorks() {
               <button
                 type="button"
                 className="hiw-bubble"
+                aria-label="Rewrite selection"
                 aria-haspopup="menu"
                 aria-expanded={menuOpen}
                 // keep the native highlight alive while the bubble is clicked
                 onMouseDown={(e) => e.preventDefault()}
                 onClick={() => setMenuOpen((o) => !o)}
               >
-                <span className="hiw-spark" aria-hidden>✦</span>
-                reWrite
+                <span className="hiw-bubble-inner">
+                  <img
+                    src="/assets/logo_transparent_new.png"
+                    alt=""
+                    width={20}
+                    height={20}
+                    draggable={false}
+                  />
+                </span>
               </button>
 
               {menuOpen && (
@@ -239,8 +247,7 @@ export default function HowItWorks() {
                       onMouseDown={(e) => e.preventDefault()}
                       onClick={() => applySkill(s)}
                     >
-                      <span className="hiw-menu-name">{s.label}</span>
-                      <span className="hiw-menu-note">{s.note}</span>
+                      {s.label}
                     </button>
                   ))}
                 </div>
