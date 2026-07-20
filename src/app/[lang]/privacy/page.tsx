@@ -3,13 +3,22 @@ import Link from 'next/link'
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import type { ReactNode } from 'react'
-
-export const metadata: Metadata = {
-  title: 'Privacy Policy | reWrite',
-  description: 'How reWrite collects, uses, stores, and shares information.',
-}
+import { notFound } from 'next/navigation'
+import { getDictionary, hasLocale } from '@/dictionaries'
+import { alternatesFor } from '@/lib/seo'
 
 export const dynamic = 'force-static'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>
+}): Promise<Metadata> {
+  const { lang } = await params
+  if (!hasLocale(lang)) return {}
+  const dict = await getDictionary(lang)
+  return { title: dict.meta.privacy.title, description: dict.meta.privacy.description, alternates: alternatesFor("/privacy", lang) }
+}
 
 function inline(text: string): ReactNode[] {
   const nodes: ReactNode[] = []
@@ -107,7 +116,16 @@ function renderMarkdown(markdown: string) {
   return content
 }
 
-export default async function PrivacyPage() {
+export default async function PrivacyPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>
+}) {
+  const { lang } = await params
+  if (!hasLocale(lang)) notFound()
+  const dict = await getDictionary(lang)
+  const p = dict.privacy
+
   const markdown = await readFile(
     path.join(process.cwd(), 'content', 'rewrite-privacy-policy.md'),
     'utf8',
@@ -117,27 +135,32 @@ export default async function PrivacyPage() {
     <main className="policy-page">
       <header className="policy-nav">
         <div className="wrap">
-          <Link className="policy-brand" href="/" aria-label="reWrite home">
+          <Link className="policy-brand" href={`/${lang}`} aria-label="reWrite home">
             <b>re</b><i>Write</i>
           </Link>
-          <Link className="policy-back" href="/">Back to home <span aria-hidden="true">↗</span></Link>
+          <Link className="policy-back" href={`/${lang}`}>{dict.nav.backToHome} <span aria-hidden="true">↗</span></Link>
         </div>
       </header>
 
       <div className="policy-layout wrap">
         <aside className="policy-aside">
-          <span className="kicker">Legal</span>
-          <p>Privacy Policy</p>
+          <span className="kicker">{p.kicker}</span>
+          <p>{p.label}</p>
           <div className="policy-dates">
-            <span>Effective</span>14 July 2026
-            <span>Last updated</span>14 July 2026
+            <span>{p.effective}</span>{p.date}
+            <span>{p.lastUpdated}</span>{p.date}
           </div>
         </aside>
 
         <article className="policy-article">
           <div className="policy-intro">
-            <span className="kicker">Your data, clearly explained</span>
-            <h1>Privacy <em>Policy</em></h1>
+            <span className="kicker">{p.introKicker}</span>
+            <h1>{p.heading}<em>{p.headingEm}</em></h1>
+            {lang !== 'en' && (
+              <p style={{ fontFamily: 'var(--sans)', fontSize: 13.5, color: 'var(--ink-faint)', marginTop: 14 }}>
+                {p.languageNote}
+              </p>
+            )}
           </div>
           <div className="policy-copy">{renderMarkdown(markdown)}</div>
         </article>

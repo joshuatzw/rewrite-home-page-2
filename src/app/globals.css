@@ -68,6 +68,15 @@ nav.links a:hover{color:var(--ink)}
 .btn-ghost:visited{color:white !important}
 .btn-ghost:hover{background:var(--ink-soft);border-color:var(--ink-soft);color:white !important}
 
+/* ---- language toggle ---- */
+.lang-toggle{display:inline-flex;align-items:center;gap:2px;border:1px solid var(--line);
+  border-radius:999px;padding:3px;flex:none}
+.lang-toggle-item{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-soft);
+  padding:5px 10px;border-radius:999px;transition:.16s;white-space:nowrap}
+.lang-toggle-item:hover{background:var(--paper-2);color:var(--ink)}
+.lang-toggle-item.is-active{background:var(--ink);color:var(--paper)}
+.mobile-menu-lang{display:flex;justify-content:center;margin-top:16px}
+
 /* ---- hero ---- */
 .hero{padding:88px 0 40px}
 .hero .kicker{margin-bottom:34px}
@@ -466,6 +475,7 @@ footer.foot{border-top:1px solid var(--line);padding:54px 0 70px}
   .brand{justify-content:center}
   nav.links{display:none}
   .hamburger{display:flex;align-items:center;justify-content:center}
+  .mobile-menu-lang .lang-toggle-item{padding:8px 14px;font-size:12px}
   /* skills images */
   .skills-sub-img img{max-width:100%}
   /* two-up skill blurbs stack on mobile */
@@ -503,3 +513,97 @@ footer.foot{border-top:1px solid var(--line);padding:54px 0 70px}
   .modes button{font-size:10px;padding:5px 7px}
   .hiw-steps{justify-content:center}
 }
+
+/* ---- pricing ---- */
+.pricing{padding:96px 0 40px}
+.pricing-head{display:flex;align-items:baseline;justify-content:space-between;gap:30px;margin-bottom:56px;flex-wrap:wrap}
+.pricing-head .kicker{margin-bottom:18px}
+.pricing-head h2{font-family:var(--serif);font-size:clamp(30px,4vw,46px);font-weight:400;letter-spacing:-.02em;max-width:20ch;text-wrap:balance}
+.pricing-head h2 em{font-style:italic}
+.pricing-head>p{font-family:var(--sans);font-size:15px;color:var(--ink-soft);max-width:36ch;line-height:1.6}
+
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:stretch}
+
+.price-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);
+  border-radius:6px;padding:36px 32px 32px;box-shadow:0 24px 60px -42px rgba(22,18,14,.35)}
+
+.price-badge{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-faint);margin-bottom:16px}
+
+.price-name{font-family:var(--serif);font-size:29px;font-weight:500;letter-spacing:-.01em}
+.price-tagline{font-family:var(--sans);font-size:13.5px;color:var(--ink-soft);margin-top:6px}
+
+.price-amount{display:flex;align-items:baseline;gap:3px;margin:30px 0 28px;flex-wrap:wrap}
+.price-currency{font-family:var(--serif);font-size:22px}
+.price-value{font-family:var(--serif);font-size:52px;font-weight:500;letter-spacing:-.02em;line-height:1}
+.price-period{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--ink-faint);margin-left:6px}
+
+.price-features{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:32px;flex:1}
+.price-features li{font-family:var(--sans);font-size:14.5px;line-height:1.55;color:var(--ink-soft);
+  padding-left:20px;position:relative}
+.price-features li::before{content:"\2014";position:absolute;left:0;top:0;color:var(--ink-faint)}
+
+.price-cta{align-self:flex-start;font-family:var(--sans);font-size:14px;font-weight:500;border-radius:999px;
+  padding:12px 22px;background:var(--ink);color:var(--paper);transition:.18s}
+.price-cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(22,18,14,.22)}
+
+/* the recommended tier: an inverted, slightly raised block — the same
+   ink/paper contrast used in .loop, not a badge or a colour accent */
+.price-card--highlight{background:var(--ink);border-color:var(--ink);color:var(--paper);
+  padding-top:32px;transform:translateY(-14px);box-shadow:0 30px 70px -30px rgba(22,18,14,.55)}
+.price-card--highlight .price-badge{color:var(--paper);opacity:.62}
+.price-card--highlight .price-name{color:var(--paper)}
+.price-card--highlight .price-tagline{color:#c8c0b2}
+.price-card--highlight .price-currency,
+.price-card--highlight .price-value{color:var(--paper)}
+.price-card--highlight .price-period{color:var(--ink-faint)}
+.price-card--highlight .price-features li{color:#c8c0b2}
+.price-card--highlight .price-features li::before{color:var(--ink-faint)}
+.price-card--highlight .price-cta{background:var(--paper);color:var(--ink)}
+.price-card--highlight .price-cta:hover{box-shadow:0 8px 22px rgba(22,18,14,.4)}
+
+.pricing-note{font-family:var(--mono);font-size:11.5px;line-height:1.65;letter-spacing:.02em;
+  color:var(--ink-faint);margin-top:40px;max-width:74ch}
+
+@media(max-width:880px){
+  .pricing{padding:56px 0 24px}
+  .pricing-head{margin-bottom:36px}
+  .pricing-grid{grid-template-columns:1fr;gap:20px}
+  .price-card--highlight{transform:none}
+  .price-card{padding:30px 26px 28px}
+}
+
+/* ---- script-specific typography (th / zh) ----
+   The type scale above is built for Latin text set in Newsreader and Space
+   Mono, neither of which ships Thai or Han glyphs. Left alone, browsers fall
+   back and apply two effects that are wrong in these scripts:
+
+   1. Synthetic obliquing. `<em>` is our emphasis device throughout the site,
+      but Thai and Chinese have no italic tradition — the browser fakes it by
+      slanting the glyphs, which reads as a rendering fault, not emphasis.
+      Emphasis falls back to weight, which both scripts do support.
+   2. Wide tracking. The .22em letter-spacing on kickers is a Latin
+      small-caps convention. Thai marks stack on the base glyph and Han
+      characters are already monospaced by design, so tracking them apart
+      damages legibility. Reduced to near zero.
+
+   Scoped via :lang(), which resolves against the lang attribute rendered by
+   src/app/[lang]/layout.tsx.
+
+   Note the doubled :lang() — the section rules above use selectors like
+   `.pricing-head h2 em`, which outrank a bare `:lang(th) em`. Repeating the
+   pseudo-class raises specificity enough to win without resorting to
+   !important, and keeps the override in one place. */
+:lang(th):lang(th) em, :lang(th):lang(th) i,
+:lang(zh):lang(zh) em, :lang(zh):lang(zh) i{font-style:normal;font-weight:600}
+
+:lang(th) .kicker,
+:lang(zh) .kicker{letter-spacing:.06em}
+
+/* Long-form body copy set in the mono face falls back to a system font in
+   these scripts; the mono tracking and small size then read as broken. */
+:lang(th) .pricing-note,
+:lang(zh) .pricing-note{font-family:var(--sans);font-size:13px;letter-spacing:0;line-height:1.75}
+
+:lang(th) .price-period,
+:lang(zh) .price-period{letter-spacing:.02em}

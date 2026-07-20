@@ -1,11 +1,13 @@
-export default function Statement() {
+import type { Dictionary } from '@/dictionaries'
+
+export default function Statement({ dict }: { dict: Dictionary['statement'] }) {
   return (
     <section className="statement">
       <div className="wrap">
         <p>
-          You already know what you want to say. reWrite just makes sure it <em>lands.</em>
+          {dict.before}<em>{dict.em}</em>
         </p>
-        <div className="by">The reWrite manifesto, no. 01</div>
+        <div className="by">{dict.by}</div>
       </div>
     </section>
   )

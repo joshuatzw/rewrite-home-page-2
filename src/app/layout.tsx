@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Newsreader, Space_Mono } from 'next/font/google'
 import './globals.css'
+import { SITE_URL } from '@/lib/seo'
 
 const newsreader = Newsreader({
   subsets: ['latin'],
@@ -18,6 +19,9 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata: Metadata = {
+  // Required for the per-page `alternates` (canonical + hreflang) to resolve
+  // into absolute URLs. See src/lib/seo.ts.
+  metadataBase: new URL(SITE_URL),
   title: 'Write it once. Send it with confidence.',
   description:
     'reWrite rewrites, proofreads and distills whatever you\'re typing — right where you type it. No pasting into a chatbot. No tab-switching.',

@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import type { Dictionary } from '@/dictionaries'
+import { formatMessage } from '@/dictionaries/locales'
+
+type SkillsAppDict = Dictionary['skillsApp']
+type SkillId = keyof SkillsAppDict['skills']
 
 interface Skill {
   id: string
@@ -12,14 +17,14 @@ interface Skill {
   on: boolean
 }
 
-const SEED: Skill[] = [
-  { id: 'proofread', name: 'Proofread', desc: 'Fix spelling and grammar while preserving your tone and voice.', kind: 'built-in', on: true },
-  { id: 'polish', name: 'Polish', desc: 'Turn a rushed draft into something clear, tight, and ready to send.', kind: 'built-in', on: true },
-  { id: 'summarise', name: 'Summarise', desc: 'Condense the text into concise bullet points.', kind: 'built-in', on: false },
-  { id: 'enhance', name: 'Enhance', desc: 'Give a thin draft depth without inventing facts you never gave it.', kind: 'built-in', on: true },
-  { id: 'beef', name: 'Beef It Up', desc: 'Take this text and write me a mail. You need to beef up my email with more information. For complex portions, please break it', kind: 'custom', base: 'Formal Email', on: true },
-  { id: 'jp', name: 'Translate to Japanese', desc: 'Please help me to rewrite the following text in Japanese. The setting of the Japanese language should be formal business. After', kind: 'custom', on: true },
-  { id: 'ecom', name: 'E-Commerce Speak', desc: '#I want you to take this text and rewrite it in a way that is suitable for eCommerce/marketing use. #The text should be catchy,', kind: 'custom', on: true },
+const SEED_META: { id: SkillId; kind: 'built-in' | 'custom'; on: boolean }[] = [
+  { id: 'proofread', kind: 'built-in', on: true },
+  { id: 'polish', kind: 'built-in', on: true },
+  { id: 'summarise', kind: 'built-in', on: false },
+  { id: 'enhance', kind: 'built-in', on: true },
+  { id: 'beef', kind: 'custom', on: true },
+  { id: 'jp', kind: 'custom', on: true },
+  { id: 'ecom', kind: 'custom', on: true },
 ]
 
 function Icon({ name }: { name: 'home' | 'history' | 'skills' | 'settings' }) {
@@ -41,14 +46,26 @@ function Icon({ name }: { name: 'home' | 'history' | 'skills' | 'settings' }) {
   )
 }
 
-function Toggle({ on, onClick, label }: { on: boolean; onClick: () => void; label: string }) {
+function Toggle({
+  on,
+  onClick,
+  label,
+  showLabel,
+  hideLabel,
+}: {
+  on: boolean
+  onClick: () => void
+  label: string
+  showLabel: string
+  hideLabel: string
+}) {
   return (
     <button
       type="button"
       className={`sk-toggle${on ? ' is-on' : ''}`}
       role="switch"
       aria-checked={on}
-      aria-label={`${on ? 'Hide' : 'Show'} ${label}`}
+      aria-label={formatMessage(on ? hideLabel : showLabel, { name: label })}
       onClick={onClick}
     >
       <span className="sk-knob" />
@@ -56,20 +73,36 @@ function Toggle({ on, onClick, label }: { on: boolean; onClick: () => void; labe
   )
 }
 
-function SkillCard({ skill, onToggle, onRemove }: { skill: Skill; onToggle: () => void; onRemove?: () => void }) {
+function SkillCard({
+  skill,
+  onToggle,
+  onRemove,
+  dict,
+}: {
+  skill: Skill
+  onToggle: () => void
+  onRemove?: () => void
+  dict: SkillsAppDict
+}) {
   return (
     <div className={`sk-card${skill.on ? '' : ' is-off'}`}>
       <div className="sk-card-top">
         <h4>{skill.name}</h4>
-        <Toggle on={skill.on} onClick={onToggle} label={skill.name} />
+        <Toggle
+          on={skill.on}
+          onClick={onToggle}
+          label={skill.name}
+          showLabel={dict.toggleShowAria}
+          hideLabel={dict.toggleHideAria}
+        />
       </div>
       <p>{skill.desc}</p>
       <div className="sk-tags">
         {skill.base && <span className="sk-tag">{skill.base}</span>}
-        <span className="sk-tag">{skill.kind === 'built-in' ? 'Built-in' : 'Custom'}</span>
+        <span className="sk-tag">{skill.kind === 'built-in' ? dict.tagBuiltIn : dict.tagCustom}</span>
         {onRemove && (
-          <button type="button" className="sk-remove" onClick={onRemove} aria-label={`Delete ${skill.name}`}>
-            Remove
+          <button type="button" className="sk-remove" onClick={onRemove} aria-label={formatMessage(dict.removeAria, { name: skill.name })}>
+            {dict.remove}
           </button>
         )}
       </div>
@@ -77,11 +110,16 @@ function SkillCard({ skill, onToggle, onRemove }: { skill: Skill; onToggle: () =
   )
 }
 
-export default function SkillsApp() {
-  const [skills, setSkills] = useState<Skill[]>(SEED)
+export default function SkillsApp({ dict }: { dict: SkillsAppDict }) {
+  const seed: Skill[] = SEED_META.map((m) => {
+    const entry: { name: string; desc: string; base?: string } = dict.skills[m.id]
+    return { id: m.id, kind: m.kind, on: m.on, name: entry.name, desc: entry.desc, base: entry.base }
+  })
+
+  const [skills, setSkills] = useState<Skill[]>(seed)
   const [modalOpen, setModalOpen] = useState(false)
   const [name, setName] = useState('')
-  const [base, setBase] = useState('None')
+  const [base, setBase] = useState(dict.modal.none)
   const [instructions, setInstructions] = useState('')
 
   const builtIn = skills.filter((s) => s.kind === 'built-in')
@@ -98,7 +136,7 @@ export default function SkillsApp() {
 
   function openModal() {
     setName('')
-    setBase('None')
+    setBase(dict.modal.none)
     setInstructions('')
     setModalOpen(true)
   }
@@ -112,7 +150,7 @@ export default function SkillsApp() {
         name: name.trim(),
         desc: instructions.trim(),
         kind: 'custom',
-        base: base !== 'None' ? base : undefined,
+        base: base !== dict.modal.none ? base : undefined,
         on: true,
       },
     ])
@@ -136,7 +174,7 @@ export default function SkillsApp() {
         <span className="sk-dot" />
         <span className="sk-dot" />
         <span className="sk-dot" />
-        <span className="sk-chrome-label">re:Write</span>
+        <span className="sk-chrome-label">{dict.chromeLabel}</span>
       </div>
 
       <div className="sk-app">
@@ -145,51 +183,51 @@ export default function SkillsApp() {
             <Image src="/assets/logo_transparent_new.png" alt="re:Write" width={34} height={34} />
           </div>
           <nav className="sk-nav">
-            <span className="sk-nav-item"><Icon name="home" />Home</span>
-            <span className="sk-nav-item"><Icon name="history" />History</span>
-            <span className="sk-nav-item is-active"><Icon name="skills" />Skills</span>
-            <span className="sk-nav-item"><Icon name="settings" />Settings</span>
+            <span className="sk-nav-item"><Icon name="home" />{dict.nav.home}</span>
+            <span className="sk-nav-item"><Icon name="history" />{dict.nav.history}</span>
+            <span className="sk-nav-item is-active"><Icon name="skills" />{dict.nav.skills}</span>
+            <span className="sk-nav-item"><Icon name="settings" />{dict.nav.settings}</span>
           </nav>
           <div className="sk-side-foot">
             <div className="sk-user">
               <span className="sk-avatar">JM</span>
               <span className="sk-user-meta">
-                <b>Joshua Mendel</b>
-                <i>re:Write Pro</i>
+                <b>{dict.userName}</b>
+                <i>{dict.userPlan}</i>
               </span>
             </div>
-            <div className="sk-version">Version 1.3.1</div>
+            <div className="sk-version">{dict.version}</div>
           </div>
         </aside>
 
         <main className="sk-main">
           <div className="sk-main-head">
             <div>
-              <h3>Skills</h3>
-              <p>Teach re:Write the voice you want. Toggle to show or hide in the overlay.</p>
+              <h3>{dict.title}</h3>
+              <p>{dict.subtitle}</p>
             </div>
             <button type="button" className="sk-new" onClick={openModal}>
-              <span>+</span> New skill
+              <span>+</span> {dict.newSkill}
             </button>
           </div>
 
-          <div className="sk-count">{enabledCount} of {skills.length} active</div>
+          <div className="sk-count">{formatMessage(dict.countActive, { enabled: enabledCount, total: skills.length })}</div>
 
-          <div className="sk-group-label">Built-in</div>
+          <div className="sk-group-label">{dict.groupBuiltIn}</div>
           <div className="sk-grid">
             {builtIn.map((s) => (
-              <SkillCard key={s.id} skill={s} onToggle={() => toggle(s.id)} />
+              <SkillCard key={s.id} skill={s} onToggle={() => toggle(s.id)} dict={dict} />
             ))}
           </div>
 
-          <div className="sk-group-label">Custom</div>
+          <div className="sk-group-label">{dict.groupCustom}</div>
           <div className="sk-grid">
             {custom.map((s) => (
-              <SkillCard key={s.id} skill={s} onToggle={() => toggle(s.id)} onRemove={() => remove(s.id)} />
+              <SkillCard key={s.id} skill={s} onToggle={() => toggle(s.id)} onRemove={() => remove(s.id)} dict={dict} />
             ))}
             <button type="button" className="sk-add-card" onClick={openModal}>
               <span className="sk-add-circle">+</span>
-              Create a new skill
+              {dict.addCard}
             </button>
           </div>
         </main>
@@ -197,41 +235,41 @@ export default function SkillsApp() {
 
       {modalOpen && (
         <div className="sk-backdrop" onMouseDown={() => setModalOpen(false)}>
-          <div className="sk-modal" role="dialog" aria-modal="true" aria-label="New skill" onMouseDown={(e) => e.stopPropagation()}>
-            <h4>New skill</h4>
+          <div className="sk-modal" role="dialog" aria-modal="true" aria-label={dict.modal.title} onMouseDown={(e) => e.stopPropagation()}>
+            <h4>{dict.modal.title}</h4>
 
-            <label className="sk-f-label">Name</label>
+            <label className="sk-f-label">{dict.modal.nameLabel}</label>
             <input
               className="sk-input"
-              placeholder="e.g. Slack Casual"
+              placeholder={dict.modal.namePlaceholder}
               value={name}
               onChange={(e) => setName(e.target.value)}
               autoFocus
             />
 
-            <label className="sk-f-label">Base skill <span>(optional)</span></label>
+            <label className="sk-f-label">{dict.modal.baseLabel} <span>{dict.modal.baseOptional}</span></label>
             <select className="sk-input sk-select" value={base} onChange={(e) => setBase(e.target.value)}>
-              <option>None</option>
+              <option>{dict.modal.none}</option>
               {skills.map((s) => (
                 <option key={s.id}>{s.name}</option>
               ))}
             </select>
-            <p className="sk-f-hint">Your instructions stack on top of the selected base skill.</p>
+            <p className="sk-f-hint">{dict.modal.baseHint}</p>
 
-            <label className="sk-f-label">Instructions</label>
+            <label className="sk-f-label">{dict.modal.instructionsLabel}</label>
             <textarea
               className="sk-input sk-textarea"
-              placeholder="Describe how this skill should rewrite text…"
+              placeholder={dict.modal.instructionsPlaceholder}
               value={instructions}
               onChange={(e) => setInstructions(e.target.value)}
             />
 
             <div className="sk-modal-foot">
               <button type="button" className="sk-btn-ghost" onClick={() => setModalOpen(false)}>
-                Cancel
+                {dict.modal.cancel}
               </button>
               <button type="button" className="sk-btn-solid" disabled={!canCreate} onClick={createSkill}>
-                Create skill
+                {dict.modal.create}
               </button>
             </div>
           </div>

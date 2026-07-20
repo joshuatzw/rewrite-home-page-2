@@ -2,8 +2,17 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import LanguageToggle from './LanguageToggle'
+import type { Dictionary, Locale } from '@/dictionaries'
 
-export default function Header() {
+interface HeaderProps {
+  lang: Locale
+  nav: Dictionary['nav']
+  languageToggle: Dictionary['languageToggle']
+}
+
+export default function Header({ lang, nav, languageToggle }: HeaderProps) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -12,7 +21,7 @@ export default function Header() {
         <div className="wrap">
           <button
             className="hamburger"
-            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-label={open ? nav.closeMenu : nav.openMenu}
             aria-expanded={open}
             onClick={() => setOpen(!open)}
           >
@@ -39,22 +48,28 @@ export default function Header() {
           </div>
 
           <nav className="links">
-            <a href="#demo">Demo</a>
-            <a href="#caps">What it does</a>
-            <a href="#loop">The loop</a>
-            <a href="#get" className="btn-ghost">
-              Get reWrite
+            <a href={`/${lang}#demo`}>{nav.demo}</a>
+            <a href={`/${lang}#caps`}>{nav.whatItDoes}</a>
+            <a href={`/${lang}#loop`}>{nav.theLoop}</a>
+            <Link href={`/${lang}/pricing`}>{nav.pricing}</Link>
+            <a href={`/${lang}#get`} className="btn-ghost">
+              {nav.getRewrite}
             </a>
+            <LanguageToggle lang={lang} ariaLabel={languageToggle.ariaLabel} />
           </nav>
         </div>
       </header>
 
       {open && (
         <div className="mobile-menu">
-          <a href="#demo" onClick={() => setOpen(false)}>Demo</a>
-          <a href="#caps" onClick={() => setOpen(false)}>What it does</a>
-          <a href="#loop" onClick={() => setOpen(false)}>The loop</a>
-          <a href="#get" className="btn-ghost mobile-menu-cta" onClick={() => setOpen(false)}>Get reWrite</a>
+          <a href={`/${lang}#demo`} onClick={() => setOpen(false)}>{nav.demo}</a>
+          <a href={`/${lang}#caps`} onClick={() => setOpen(false)}>{nav.whatItDoes}</a>
+          <a href={`/${lang}#loop`} onClick={() => setOpen(false)}>{nav.theLoop}</a>
+          <Link href={`/${lang}/pricing`} onClick={() => setOpen(false)}>{nav.pricing}</Link>
+          <a href={`/${lang}#get`} className="btn-ghost mobile-menu-cta" onClick={() => setOpen(false)}>{nav.getRewrite}</a>
+          <div className="mobile-menu-lang">
+            <LanguageToggle lang={lang} ariaLabel={languageToggle.ariaLabel} />
+          </div>
         </div>
       )}
     </>

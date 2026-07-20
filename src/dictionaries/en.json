@@ -1,0 +1,330 @@
+{
+  "meta": {
+    "home": {
+      "title": "Write it once. Send it with confidence.",
+      "description": "reWrite rewrites, proofreads and distills whatever you're typing — right where you type it. No pasting into a chatbot. No tab-switching."
+    },
+    "contact": {
+      "title": "Contact us | reWrite",
+      "description": "Get in touch with the reWrite team."
+    },
+    "privacy": {
+      "title": "Privacy Policy | reWrite",
+      "description": "How reWrite collects, uses, stores, and shares information."
+    },
+    "pricing": {
+      "title": "Pricing | reWrite",
+      "description": "Simple plans for reWrite. Start free with 50 rewrites a month, upgrade for custom skills and higher limits."
+    }
+  },
+  "nav": {
+    "demo": "Demo",
+    "whatItDoes": "What it does",
+    "theLoop": "The loop",
+    "pricing": "Pricing",
+    "getRewrite": "Get reWrite",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "backToHome": "Back to home"
+  },
+  "languageToggle": {
+    "label": "Language",
+    "ariaLabel": "Change language"
+  },
+  "hero": {
+    "kicker": "A writing assistant that lives in one hotkey",
+    "titleLead": "Write it once. Send it with ",
+    "titleEm": "confidence.",
+    "leadBefore": "reWrite rewrites, proofreads and distills whatever you're typing, right where you type it. ",
+    "leadBold": "No pasting into a chatbot. No tab-switching.",
+    "leadAfter": " Just press the key and keep going.",
+    "cta": "Start writing free",
+    "hintBefore": "or ",
+    "hintKbd": "highlight the text below",
+    "hintAfter": " to try it"
+  },
+  "howItWorks": {
+    "label": "How it works",
+    "steps": [
+      "Highlight text",
+      "Pick a skill",
+      "Watch it rewrite"
+    ],
+    "promptIdle": "Highlight any part of the text below — a reWrite bubble appears. Click it, choose a skill, and the draft is rewritten for you.",
+    "promptAppliedBefore": "reWrite applied ",
+    "promptAppliedAfter": " to your draft.",
+    "thinking": "Rewriting your draft",
+    "chooseSkill": "Choose a skill",
+    "ariaRewrite": "Rewrite selection",
+    "statusIdle": "Highlight text to begin",
+    "statusThinking": "Working…",
+    "statusDone": "Done. Try another skill.",
+    "reset": "Reset draft",
+    "draft": "hey so i went over the numbers from last quater and honestly its looking pretty good, we definately beat the target and i think we should tell the team soon, maybe in the meeting tommorow",
+    "skills": {
+      "proofread": {
+        "label": "Proofread",
+        "note": "Fix every error, voice untouched",
+        "after": "Hey, so I went over the numbers from last quarter and honestly it's looking pretty good. We definitely beat the target, and I think we should tell the team soon — maybe in the meeting tomorrow."
+      },
+      "polish": {
+        "label": "Polish",
+        "note": "Rough draft → ready to send",
+        "after": "Hi team,\n\nI've had a chance to review last quarter's numbers, and the results are strong — we comfortably beat our target. I'd love to walk everyone through the details at tomorrow's meeting."
+      },
+      "summarise": {
+        "label": "Summarise",
+        "note": "A wall of text → the essentials",
+        "after": "Last quarter beat target. Sharing the details at tomorrow's meeting."
+      },
+      "enhance": {
+        "label": "Enhance",
+        "note": "Thin and flat → sharp and convincing",
+        "after": "I've finished reviewing last quarter's performance, and the numbers are genuinely encouraging: we beat our target with room to spare. That's a result worth sharing with the whole team, so I'd like to walk everyone through the highlights at tomorrow's meeting."
+      }
+    }
+  },
+  "statement": {
+    "before": "You already know what you want to say. reWrite just makes sure it ",
+    "em": "lands.",
+    "by": "The reWrite manifesto, no. 01"
+  },
+  "capabilities": {
+    "heading": "Four things, ",
+    "headingEm": "one",
+    "headingAfter": " hotkey.",
+    "sub": "Fire up reWrite, pick a behaviour, and watch the magic.",
+    "items": [
+      {
+        "no": "01 / Proofread",
+        "title": "Catch ",
+        "titleEm": "everything",
+        "body": "Spelling, grammar, doubled words, stray punctuation. Fixed quietly, with your tone and wording left exactly as you wrote them."
+      },
+      {
+        "no": "02 / Polish",
+        "title": "Ready to ",
+        "titleEm": "send",
+        "body": "Turn a rushed draft into something you can put in front of a colleague, client, or manager. Clearer, tighter, and professional without losing your meaning."
+      },
+      {
+        "no": "03 / Summarise",
+        "title": "Find the ",
+        "titleEm": "signal",
+        "body": "Drop in a wall of meeting notes and get back the few lines that actually matter, decisions, deadlines, and asks intact."
+      },
+      {
+        "no": "04 / Enhance",
+        "title": "Say ",
+        "titleEm": "more",
+        "body": "Take a thin, underdeveloped draft and give it depth. Weak points get sharper and the argument reads as complete, without inventing facts you never gave it."
+      }
+    ]
+  },
+  "skills": {
+    "heading": "Introducing ",
+    "headingEm": "Skills",
+    "sub": "Build the writing assistant that actually sounds like you.",
+    "items": [
+      {
+        "no": "01",
+        "title": "Teach it once, ",
+        "titleEm": "never again.",
+        "body": "Show reWrite your tone, your brand voice, your preferred style. It carries that into every rewrite from here on."
+      },
+      {
+        "no": "02",
+        "title": "One skill ",
+        "titleEm": "per context.",
+        "body": "A formal report calls for a different voice than a Slack message or a campaign summary. Write a skill for each and let reWrite handle the rest. Try it above — toggle a few on, or create one of your own."
+      }
+    ]
+  },
+  "skillsApp": {
+    "chromeLabel": "re:Write",
+    "nav": {
+      "home": "Home",
+      "history": "History",
+      "skills": "Skills",
+      "settings": "Settings"
+    },
+    "userName": "Joshua Mendel",
+    "userPlan": "re:Write Pro",
+    "version": "Version 1.3.1",
+    "title": "Skills",
+    "subtitle": "Teach re:Write the voice you want. Toggle to show or hide in the overlay.",
+    "newSkill": "New skill",
+    "countActive": "{enabled} of {total} active",
+    "groupBuiltIn": "Built-in",
+    "groupCustom": "Custom",
+    "tagBuiltIn": "Built-in",
+    "tagCustom": "Custom",
+    "remove": "Remove",
+    "removeAria": "Delete {name}",
+    "toggleShowAria": "Show {name}",
+    "toggleHideAria": "Hide {name}",
+    "addCard": "Create a new skill",
+    "modal": {
+      "title": "New skill",
+      "nameLabel": "Name",
+      "namePlaceholder": "e.g. Slack Casual",
+      "baseLabel": "Base skill",
+      "baseOptional": "(optional)",
+      "baseHint": "Your instructions stack on top of the selected base skill.",
+      "instructionsLabel": "Instructions",
+      "instructionsPlaceholder": "Describe how this skill should rewrite text…",
+      "none": "None",
+      "cancel": "Cancel",
+      "create": "Create skill"
+    },
+    "skills": {
+      "proofread": {
+        "name": "Proofread",
+        "desc": "Fix spelling and grammar while preserving your tone and voice."
+      },
+      "polish": {
+        "name": "Polish",
+        "desc": "Turn a rushed draft into something clear, tight, and ready to send."
+      },
+      "summarise": {
+        "name": "Summarise",
+        "desc": "Condense the text into concise bullet points."
+      },
+      "enhance": {
+        "name": "Enhance",
+        "desc": "Give a thin draft depth without inventing facts you never gave it."
+      },
+      "beef": {
+        "name": "Beef It Up",
+        "desc": "Take this text and write me a mail. You need to beef up my email with more information. For complex portions, please break it",
+        "base": "Formal Email"
+      },
+      "jp": {
+        "name": "Translate to Japanese",
+        "desc": "Please help me to rewrite the following text in Japanese. The setting of the Japanese language should be formal business. After"
+      },
+      "ecom": {
+        "name": "E-Commerce Speak",
+        "desc": "#I want you to take this text and rewrite it in a way that is suitable for eCommerce/marketing use. #The text should be catchy,"
+      }
+    }
+  },
+  "theLoop": {
+    "heading": "Delete the ",
+    "headingEm": "copy-paste loop.",
+    "sub": "The old way takes seven steps and three apps. reWrite is one; and you never leave the cursor you were already in.",
+    "steps": [
+      "Write the draft in your email",
+      "Copy it all",
+      "Open a chatbot in another tab",
+      "Paste, prompt, and wait",
+      "Copy the answer back",
+      "Paste and re-format it",
+      "Press the hotkeys. Keep writing."
+    ]
+  },
+  "getReWrite": {
+    "kicker": "Get reWrite",
+    "headingBefore": "Ready to try it out?",
+    "headingEm": "Let's get you started.",
+    "windows": "Windows",
+    "macos": "macOS",
+    "downloadWindows": "Download for Windows",
+    "downloadMacos": "Download for macOS",
+    "ariaWindows": "Download reWrite 1.1.7 for Windows",
+    "ariaMacos": "Download reWrite 1.1.7 for macOS"
+  },
+  "footer": {
+    "tagline": "Confident writing, one hotkey away. Works wherever you type.",
+    "product": "Product",
+    "productLinks": {
+      "demo": "Live demo",
+      "modes": "Modes",
+      "loop": "The loop",
+      "download": "Download"
+    },
+    "company": "Company",
+    "companyLinks": {
+      "about": "About",
+      "manifesto": "Manifesto",
+      "privacy": "Privacy",
+      "contact": "Contact"
+    },
+    "copyright": "© 2026 reWrite. Press once. Read perfect."
+  },
+  "contact": {
+    "kicker": "Contact us",
+    "headingBefore": "How can we ",
+    "headingEm": "help?",
+    "intro": "Questions, feedback, or something not working as expected? Send us a note and we'll get back to you as soon as we can.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "queryType": "Query type",
+      "queryOptions": [
+        "General",
+        "Feedback",
+        "Payment and billing",
+        "Others"
+      ],
+      "message": "Message",
+      "submit": "Send message"
+    },
+    "emailKicker": "Prefer email?",
+    "emailIntroBefore": "You can also write to us directly at ",
+    "emailIntroAfter": "."
+  },
+  "privacy": {
+    "kicker": "Legal",
+    "label": "Privacy Policy",
+    "effective": "Effective",
+    "lastUpdated": "Last updated",
+    "date": "14 July 2026",
+    "introKicker": "Your data, clearly explained",
+    "heading": "Privacy ",
+    "headingEm": "Policy",
+    "languageNote": "This policy is maintained in English only."
+  },
+  "pricing": {
+    "kicker": "Pricing",
+    "heading": {
+      "lead": "Start free. Pay only if you ",
+      "emphasis": "outgrow it."
+    },
+    "subhead": "Every plan runs on the same rewriting engine. What changes is how often you can call on it, and how far you can shape it to sound like you.",
+    "billingSuffix": "per month",
+    "tiers": {
+      "free": {
+        "name": "Free",
+        "tagline": "Try it on real work.",
+        "features": [
+          "50 rewrites per month",
+          "Proofread, Polish, Summarise, and Enhance",
+          "Works inline, in any app"
+        ],
+        "cta": "Download free"
+      },
+      "pro": {
+        "name": "Pro",
+        "badge": "Recommended",
+        "tagline": "For daily writing.",
+        "features": [
+          "Everything in Free",
+          "Custom Skills — teach reWrite tones of your own, so it writes the way you actually do",
+          "1,000 rewrites per month"
+        ],
+        "cta": "Upgrade to Pro"
+      },
+      "max": {
+        "name": "Max",
+        "tagline": "For constant, heavy use.",
+        "features": [
+          "Everything in Pro",
+          "Unlimited rewrites per month"
+        ],
+        "cta": "Upgrade to Max"
+      }
+    },
+    "note": "A rewrite is counted each time reWrite generates a result, whether from a built-in capability or a custom skill. Re-running on the same text counts as a new rewrite. Limits reset on your billing date."
+  }
+}

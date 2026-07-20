@@ -1,0 +1,299 @@
+{
+  "meta": {
+    "home": {
+      "title": "一次写好，自信发送。",
+      "description": "reWrite 在你输入的地方，实时改写、校对并提炼文字。无需复制粘贴到聊天机器人，也无需切换标签页。"
+    },
+    "contact": {
+      "title": "联系我们 | reWrite",
+      "description": "与 reWrite 团队取得联系。"
+    },
+    "privacy": {
+      "title": "隐私政策 | reWrite",
+      "description": "了解 reWrite 如何收集、使用、存储和共享信息。"
+    },
+    "pricing": {
+      "title": "价格 | reWrite",
+      "description": "reWrite 的简单定价方案。免费开始，每月可获得 50 次改写额度，升级后解锁自定义技能与更高额度。"
+    }
+  },
+  "nav": {
+    "demo": "演示",
+    "whatItDoes": "功能",
+    "theLoop": "循环",
+    "pricing": "价格",
+    "getRewrite": "获取 reWrite",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "backToHome": "返回首页"
+  },
+  "languageToggle": {
+    "label": "语言",
+    "ariaLabel": "切换语言"
+  },
+  "hero": {
+    "kicker": "一个快捷键，唤醒你的写作助手",
+    "titleLead": "一次写好，发送时更加",
+    "titleEm": "自信。",
+    "leadBefore": "reWrite 会在你输入的地方，实时改写、校对并提炼你正在写的内容。",
+    "leadBold": "无需复制粘贴到聊天机器人，也无需切换标签页。",
+    "leadAfter": "按下快捷键，继续写你的。",
+    "cta": "免费开始写作",
+    "hintBefore": "或",
+    "hintKbd": "选中下方文字",
+    "hintAfter": "即可试用"
+  },
+  "howItWorks": {
+    "label": "使用方法",
+    "steps": ["选中文字", "选择技能", "查看改写结果"],
+    "promptIdle": "选中下方任意一段文字，reWrite 图标就会出现。点击它，选择一个技能，草稿就会自动帮你改写。",
+    "promptAppliedBefore": "reWrite 已将",
+    "promptAppliedAfter": "应用到你的文字上。",
+    "thinking": "正在改写你的文字",
+    "chooseSkill": "选择技能",
+    "ariaRewrite": "改写所选文字",
+    "statusIdle": "选中文字即可开始",
+    "statusThinking": "处理中…",
+    "statusDone": "完成。可以再试试其他技能。",
+    "reset": "重置草稿",
+    "draft": "哎刚看了一下上季度的数据,感觉整体做的挺不错的,这次应该是真的超额完成目标了,我因该尽快跟大家说一声,可能就是明天开会的时候说一下",
+    "skills": {
+      "proofread": {
+        "label": "校对",
+        "note": "修正每一处错误，语气保持不变",
+        "after": "哎，刚看了一下上季度的数据，感觉整体做得挺不错的，这次应该是真的超额完成目标了，我应该尽快跟大家说一声，可能就是明天开会的时候说一下。"
+      },
+      "polish": {
+        "label": "润色",
+        "note": "从粗略草稿 → 可直接发送",
+        "after": "大家好，\n\n我看了一下上季度的数据，整体表现很不错，我们成功超额完成了目标。想找个时间跟大家详细说明一下，明天的会议上再一起过一遍细节吧。"
+      },
+      "summarise": {
+        "label": "总结",
+        "note": "从大段文字 → 提炼要点",
+        "after": "上季度超额完成目标，明天开会详细说明。"
+      },
+      "enhance": {
+        "label": "增强",
+        "note": "从单薄内容 → 犀利有说服力",
+        "after": "我仔细复盘了上季度的整体数据，结果相当令人振奋：我们不仅达成了既定目标，还实现了明显的超额完成，这在过去几个季度里并不常见。这样的成绩值得让整个团队都清楚地了解，也是对大家这段时间努力的最好证明，我打算在明天的会议上，完整地跟大家梳理一遍关键数据和背后的原因。"
+      }
+    }
+  },
+  "statement": {
+    "before": "你已经知道自己想说什么，reWrite 只是让它",
+    "em": "准确传达。",
+    "by": "reWrite 宣言 第 01 篇"
+  },
+  "capabilities": {
+    "heading": "四项能力，",
+    "headingEm": "一个",
+    "headingAfter": "快捷键。",
+    "sub": "启动 reWrite，选择一种处理方式，看它施展魔法。",
+    "items": [
+      {
+        "no": "01 / 校对",
+        "title": "捕捉",
+        "titleEm": "每一处错误",
+        "body": "拼写、语法、重复用词、多余的标点符号，都会被悄悄修正，同时完整保留你原本的语气和措辞。"
+      },
+      {
+        "no": "02 / 润色",
+        "title": "让它",
+        "titleEm": "随时可发",
+        "body": "把仓促写就的草稿，变成可以直接呈现给同事、客户或主管的文字。更清晰、更精炼、更专业，同时不改变你的原意。"
+      },
+      {
+        "no": "03 / 总结",
+        "title": "抓住",
+        "titleEm": "重点",
+        "body": "粘贴一大段会议记录进去，只留下真正重要的内容——决议、截止日期和待办事项，一个不漏。"
+      },
+      {
+        "no": "04 / 增强",
+        "title": "表达",
+        "titleEm": "得更充分",
+        "body": "把单薄、不够完整的草稿变得更有深度。薄弱之处会被强化，论述读起来更加完整，且不会凭空捏造你没有提供的事实。"
+      }
+    ]
+  },
+  "skills": {
+    "heading": "了解",
+    "headingEm": "技能",
+    "sub": "打造真正像你自己的写作助手。",
+    "items": [
+      {
+        "no": "01",
+        "title": "教一次，",
+        "titleEm": "无需重复。",
+        "body": "把你的语气、品牌调性和偏好风格教给 reWrite，此后每一次改写都会沿用这些设定。"
+      },
+      {
+        "no": "02",
+        "title": "一个场景，",
+        "titleEm": "一个技能。",
+        "body": "正式报告需要的语气，和 Slack 消息或活动总结完全不同。为每种场景各写一个技能，剩下的交给 reWrite。现在就在上方试试——开启几个技能，或创建属于你自己的技能。"
+      }
+    ]
+  },
+  "skillsApp": {
+    "chromeLabel": "re:Write",
+    "nav": {
+      "home": "主页",
+      "history": "历史记录",
+      "skills": "技能",
+      "settings": "设置"
+    },
+    "userName": "Joshua Mendel",
+    "userPlan": "re:Write Pro",
+    "version": "版本 1.3.1",
+    "title": "技能",
+    "subtitle": "教 re:Write 学会你想要的语气。开关它们，决定在悬浮菜单里显示或隐藏。",
+    "newSkill": "新建技能",
+    "countActive": "已启用 {enabled} / {total} 个技能",
+    "groupBuiltIn": "内置",
+    "groupCustom": "自定义",
+    "tagBuiltIn": "内置",
+    "tagCustom": "自定义",
+    "remove": "删除",
+    "removeAria": "删除{name}",
+    "toggleShowAria": "显示{name}",
+    "toggleHideAria": "隐藏{name}",
+    "addCard": "创建新技能",
+    "modal": {
+      "title": "新建技能",
+      "nameLabel": "名称",
+      "namePlaceholder": "例如：Slack 轻松语气",
+      "baseLabel": "基础技能",
+      "baseOptional": "（可选）",
+      "baseHint": "你的指令会叠加在所选基础技能之上。",
+      "instructionsLabel": "指令",
+      "instructionsPlaceholder": "描述这个技能应如何改写文字…",
+      "none": "无",
+      "cancel": "取消",
+      "create": "创建技能"
+    },
+    "skills": {
+      "proofread": { "name": "校对", "desc": "修正拼写和语法，同时保留你的语气和风格。" },
+      "polish": { "name": "润色", "desc": "把仓促写就的草稿变得清晰、精炼、随时可发送。" },
+      "summarise": { "name": "总结", "desc": "将文字压缩成简明的要点列表。" },
+      "enhance": { "name": "增强", "desc": "为单薄的草稿增添深度，同时不凭空捏造信息。" },
+      "beef": { "name": "内容加量", "desc": "把这段文字写成一封邮件。请为我的邮件补充更多信息，复杂的部分请分点说明", "base": "正式邮件" },
+      "jp": { "name": "翻译成日语", "desc": "请帮我把以下文字改写成日语，语气设定为正式商务用语。之后" },
+      "ecom": { "name": "电商文案风格", "desc": "#希望你把这段文字改写成适合电商/营销场景使用的版本 #文字需要有吸引力，" }
+    }
+  },
+  "theLoop": {
+    "heading": "删除",
+    "headingEm": "复制粘贴循环。",
+    "sub": "旧方法需要七个步骤、三个应用；reWrite 只需要一个，你也无需把光标移出正在输入的地方。",
+    "steps": [
+      "在邮件里写草稿",
+      "全部复制",
+      "打开另一个标签页里的聊天机器人",
+      "粘贴、输入提示词，然后等待",
+      "把回答复制回来",
+      "粘贴并重新排版",
+      "按下快捷键，继续写。"
+    ]
+  },
+  "getReWrite": {
+    "kicker": "获取 reWrite",
+    "headingBefore": "准备好试试了吗？",
+    "headingEm": "马上开始使用。",
+    "windows": "Windows",
+    "macos": "macOS",
+    "downloadWindows": "下载 Windows 版",
+    "downloadMacos": "下载 macOS 版",
+    "ariaWindows": "下载 reWrite 1.1.7 Windows 版",
+    "ariaMacos": "下载 reWrite 1.1.7 macOS 版"
+  },
+  "footer": {
+    "tagline": "自信写作，只差一个快捷键。随处可用，跟着你的输入框走。",
+    "product": "产品",
+    "productLinks": {
+      "demo": "在线演示",
+      "modes": "处理模式",
+      "loop": "循环",
+      "download": "下载"
+    },
+    "company": "公司",
+    "companyLinks": {
+      "about": "关于我们",
+      "manifesto": "宣言",
+      "privacy": "隐私政策",
+      "contact": "联系我们"
+    },
+    "copyright": "© 2026 reWrite。按一下，读得完美。"
+  },
+  "contact": {
+    "kicker": "联系我们",
+    "headingBefore": "有什么",
+    "headingEm": "能帮你？",
+    "intro": "有疑问、建议，或者遇到了什么问题？给我们留言，我们会尽快回复你。",
+    "form": {
+      "name": "姓名",
+      "email": "邮箱",
+      "queryType": "咨询类型",
+      "queryOptions": ["常规咨询", "意见反馈", "付款与账单", "其他"],
+      "message": "留言内容",
+      "submit": "发送消息"
+    },
+    "emailKicker": "更喜欢用邮件？",
+    "emailIntroBefore": "你也可以直接写信到 ",
+    "emailIntroAfter": ""
+  },
+  "privacy": {
+    "kicker": "法律条款",
+    "label": "隐私政策",
+    "effective": "生效日期",
+    "lastUpdated": "最近更新",
+    "date": "2026年7月14日",
+    "introKicker": "清楚说明你的数据去向",
+    "heading": "隐私",
+    "headingEm": "政策",
+    "languageNote": "本政策仅提供英文版本。"
+  },
+  "pricing": {
+    "kicker": "价格",
+    "heading": {
+      "lead": "免费开始，",
+      "emphasis": "只有当额度不够用时才需要付费。"
+    },
+    "subhead": "每个方案背后都是同一套改写引擎。变化的是你能调用它的频率，以及你能把它打磨到多贴近你自己声音的程度。",
+    "billingSuffix": "每月",
+    "tiers": {
+      "free": {
+        "name": "Free",
+        "tagline": "拿真实工作试试看。",
+        "features": [
+          "每月 50 次改写额度",
+          "校对、润色、总结和增强",
+          "适用于任意应用，随打随改"
+        ],
+        "cta": "免费下载"
+      },
+      "pro": {
+        "name": "Pro",
+        "badge": "推荐",
+        "tagline": "适合日常写作。",
+        "features": [
+          "包含 Free 方案的全部内容",
+          "自定义技能——教会 reWrite 你自己的语气，让它写出真正像你的文字",
+          "每月 1,000 次改写额度"
+        ],
+        "cta": "升级到 Pro"
+      },
+      "max": {
+        "name": "Max",
+        "tagline": "适合高频、重度使用。",
+        "features": [
+          "包含 Pro 方案的全部内容",
+          "每月无限次改写"
+        ],
+        "cta": "升级到 Max"
+      }
+    },
+    "note": "每当 reWrite 生成一次结果，无论是通过内置能力还是自定义技能，都会计为一次改写。对同一段文字重新运行，也会计为新的一次改写。额度会在你的账单日重置。"
+  }
+}

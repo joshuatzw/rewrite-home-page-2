@@ -1,12 +1,14 @@
-export default function GetReWrite() {
+import type { Dictionary } from '@/dictionaries'
+
+export default function GetReWrite({ dict }: { dict: Dictionary['getReWrite'] }) {
   return (
     <section id="get" className="get">
       <div className="wrap">
         <div className="get-inner">
-          <div className="kicker">Get reWrite</div>
+          <div className="kicker">{dict.kicker}</div>
           <h2>
-            Ready to try it out? <br></br>
-            <em>Let&apos;s get you started.</em>
+            {dict.headingBefore} <br></br>
+            <em>{dict.headingEm}</em>
           </h2>
           <div className="get-cta">
             <a
@@ -14,20 +16,20 @@ export default function GetReWrite() {
               href="https://github.com/joshuatzw/reWrite/releases/download/v1.1.7/reWrite_1.1.7_x64-setup.exe"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Download reWrite 1.1.7 for Windows"
+              aria-label={dict.ariaWindows}
             >
-              <span className="plat">Windows</span>
-              <span className="soon">Download for Windows</span>
+              <span className="plat">{dict.windows}</span>
+              <span className="soon">{dict.downloadWindows}</span>
             </a>
             <a
               className="btn-download"
               href="https://github.com/joshuatzw/reWrite/releases/download/v1.1.7/reWrite_1.1.7_universal.dmg"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Download reWrite 1.1.7 for macOS"
+              aria-label={dict.ariaMacos}
             >
-              <span className="plat">macOS</span>
-              <span className="soon">Download for macOS</span>
+              <span className="plat">{dict.macos}</span>
+              <span className="soon">{dict.downloadMacos}</span>
             </a>
           </div>
         </div>

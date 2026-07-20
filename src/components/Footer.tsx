@@ -1,6 +1,12 @@
 import Link from 'next/link'
+import type { Dictionary, Locale } from '@/dictionaries'
 
-export default function Footer() {
+interface FooterProps {
+  lang: Locale
+  dict: Dictionary['footer']
+}
+
+export default function Footer({ lang, dict }: FooterProps) {
   return (
     <footer className="foot">
       <div className="wrap">
@@ -9,26 +15,26 @@ export default function Footer() {
             <div className="name">
               re<i>Write</i>
             </div>
-            <p className="tag">Confident writing, one hotkey away. Works wherever you type.</p>
+            <p className="tag">{dict.tagline}</p>
           </div>
           <div className="foot-links">
             <div className="foot-col">
-              <h4>Product</h4>
-              <a href="#demo">Live demo</a>
-              <a href="#caps">Modes</a>
-              <a href="#loop">The loop</a>
-              <a href="#get">Download</a>
+              <h4>{dict.product}</h4>
+              <a href="#demo">{dict.productLinks.demo}</a>
+              <a href="#caps">{dict.productLinks.modes}</a>
+              <a href="#loop">{dict.productLinks.loop}</a>
+              <a href="#get">{dict.productLinks.download}</a>
             </div>
             <div className="foot-col">
-              <h4>Company</h4>
-              <a href="#">About</a>
-              <a href="#">Manifesto</a>
-              <Link href="/privacy">Privacy</Link>
-              <Link href="/contact">Contact</Link>
+              <h4>{dict.company}</h4>
+              <a href="#">{dict.companyLinks.about}</a>
+              <a href="#">{dict.companyLinks.manifesto}</a>
+              <Link href={`/${lang}/privacy`}>{dict.companyLinks.privacy}</Link>
+              <Link href={`/${lang}/contact`}>{dict.companyLinks.contact}</Link>
             </div>
           </div>
         </div>
-        <div className="foot-base">© 2026 reWrite. Press once. Read perfect.</div>
+        <div className="foot-base">{dict.copyright}</div>
       </div>
     </footer>
   )
