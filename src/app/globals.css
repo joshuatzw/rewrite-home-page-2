@@ -37,9 +37,13 @@ a{color:inherit;text-decoration:none}
   --paper-2:#efe9dc;
   --line:#d8d0c0;
   --card:#fbf8f1;
-  --serif:var(--font-newsreader),Georgia,serif;
-  --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
-  --mono:var(--font-space-mono),ui-monospace,monospace;
+  /* Noto Sans Thai sits behind the Latin face in every stack rather than
+     replacing it. Font fallback is per-character, so Latin runs (the brand
+     name, prices, shortcut keys) still render in Newsreader / Space Mono on
+     the Thai pages, and only the Thai characters reach Noto. */
+  --serif:var(--font-newsreader),var(--font-noto-sans-thai),Georgia,serif;
+  --sans:"Helvetica Neue",Helvetica,var(--font-noto-sans-thai),Arial,sans-serif;
+  --mono:var(--font-space-mono),var(--font-noto-sans-thai),ui-monospace,monospace;
 }
 
 body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.5}
@@ -575,12 +579,14 @@ footer.foot{border-top:1px solid var(--line);padding:54px 0 70px}
 
 /* ---- script-specific typography (th / zh) ----
    The type scale above is built for Latin text set in Newsreader and Space
-   Mono, neither of which ships Thai or Han glyphs. Left alone, browsers fall
-   back and apply two effects that are wrong in these scripts:
+   Mono, neither of which ships Thai or Han glyphs. Thai resolves to Noto Sans
+   Thai (see the stacks in :root) and Han to whatever the OS supplies, but the
+   Latin-tuned scale still applies two effects that are wrong in these scripts:
 
    1. Synthetic obliquing. `<em>` is our emphasis device throughout the site,
-      but Thai and Chinese have no italic tradition — the browser fakes it by
-      slanting the glyphs, which reads as a rendering fault, not emphasis.
+      but Thai and Chinese have no italic tradition — neither face has an
+      italic style, so the browser fakes one by slanting the glyphs, which
+      reads as a rendering fault rather than emphasis.
       Emphasis falls back to weight, which both scripts do support.
    2. Wide tracking. The .22em letter-spacing on kickers is a Latin
       small-caps convention. Thai marks stack on the base glyph and Han
@@ -600,7 +606,7 @@ footer.foot{border-top:1px solid var(--line);padding:54px 0 70px}
 :lang(th) .kicker,
 :lang(zh) .kicker{letter-spacing:.06em}
 
-/* Long-form body copy set in the mono face falls back to a system font in
+/* Long-form body copy set in the mono face lands on a proportional face in
    these scripts; the mono tracking and small size then read as broken. */
 :lang(th) .pricing-note,
 :lang(zh) .pricing-note{font-family:var(--sans);font-size:13px;letter-spacing:0;line-height:1.75}
